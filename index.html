@@ -34,24 +34,35 @@
   <main>
     <section id="about">
       <h2>About Me</h2>
-      <p>Welcome to my CS-499 Computer Science Capstone ePortfolio. This website showcases my work, technical skills, and improvements to projects completed during my degree.</p>
-      <p>My main artifact is Travlr Getaways, a full-stack application originally developed in CS-465. I am using the same project to demonstrate my progress in software design and engineering, algorithms and data structures, and databases.</p>
+      <p>Welcome to my CS-499 Computer Science Capstone ePortfolio. I created this website to show how I have applied skills from my computer science coursework to improve an existing application. My goal is to demonstrate not only the finished features, but also how I planned, tested, and troubleshot those improvements.</p>
+      <p>The main artifact in my portfolio is Travlr Getaways, a full-stack travel application that I originally developed in CS-465. It uses Angular for the administrative interface, Node.js and Express for its API, and MongoDB for trip information. I selected this project because I could build on a working application while strengthening it in three areas: software design and engineering, algorithms and data structures, and databases.</p>
+      <p>As I work through the capstone, I am documenting my changes and reflecting on challenges I encountered. The source code is available through the GitHub links below, and I will continue updating this portfolio as the remaining enhancement is completed.</p>
     </section>
 
     <section id="engineering">
       <h2>Enhancement One: Software Design and Engineering</h2>
       <p class="status">Enhancement implemented; final review and portfolio documentation ongoing.</p>
-      <p>My first enhancement focuses on improving the security of Travlr Getaways. I added JWT authentication, created an Angular login page, and protected administrative routes so users must be authenticated before accessing certain features. I also updated the back end to require authentication when adding, editing, or deleting trips.</p>
-      <p>This enhancement helped me better understand how front-end and back-end security work together. I also gained experience troubleshooting an existing application and using GitHub to manage my changes. The administrator login has been tested successfully, and I plan to make any additional improvements based on my instructor's feedback.</p>
+      <h3>Purpose and improvements</h3>
+      <p>My first enhancement focused on the security of the Travlr Getaways administrative interface. I wanted to make sure that administrative features were not simply available to anyone who opened the page. To address this, I added JSON Web Token (JWT) authentication, created an Angular login page, and protected administrative routes so users must sign in before accessing them.</p>
+      <p>I also updated the back end to check authentication when someone attempts to add, edit, or delete trip information. This was important because hiding buttons or pages in the front end alone would not be enough to secure the underlying API. The enhancement required me to think about how the Angular application, Express routes, and authentication process work together.</p>
+      <h3>Testing and what I learned</h3>
+      <p>I tested the administrator login and confirmed that the authentication request worked. While making the changes, I practiced troubleshooting, reviewing how different parts of the application communicate, and committing my progress through GitHub. I gained a better understanding of why security checks should be handled in both the user interface and the back end, rather than relying on only one layer.</p>
+      <p>This enhancement helped me apply software design and engineering concepts to a project I had already built. I plan to review any instructor feedback and make further improvements if needed.</p>
+      <p><a href="https://github.com/AndresJC96/cs465-fullstack/tree/module7">Explore the Travlr Getaways project code</a></p>
     </section>
 
     <section id="algorithms">
       <h2>Enhancement Two: Algorithms and Data Structures</h2>
       <p class="status">Enhancement implemented and tested; instructor review and final polishing pending.</p>
-      <p>For my second enhancement, I improved the trip listing page by adding searching, filtering, and sorting. Users can search for trips by name or resort, filter the results by a maximum price, and organize trips alphabetically or by price from lowest to highest.</p>
-      <p>I used TypeScript arrays and the <code>filter()</code> and <code>sort()</code> methods to process trip records. The search checks trip names and resorts without being case-sensitive. The price filter compares each trip's price against the amount entered, and the sorting step organizes the remaining results. These changes make it easier to find specific trips without having to look through every listing.</p>
-      <p>While testing this enhancement, I discovered that the MongoDB trips collection was empty, which prevented the application from displaying any trips. I imported the trip data using MongoDB Compass, tested the API again, and confirmed that the search, filtering, and sorting features worked with the restored records. The experience taught me to troubleshoot the front end, back end, and database together.</p>
-      <p>I originally considered pagination but deferred it so I could focus on making the three main features work correctly. Since the project currently uses a small number of trips, processing the results in Angular is reasonable. If the number of records grows, server-side searching, sorting, and pagination could be worthwhile improvements.</p>
+      <h3>Purpose and improvements</h3>
+      <p>For my second enhancement, I focused on improving how trip information is searched and organized. The original trip listing displayed records from the database but offered limited ways to narrow down the results. I wanted to make the page more useful, especially if additional trips were added in the future.</p>
+      <p>I added a search field that checks trip names and resorts, a maximum-price filter, and sorting options for alphabetical order or price from lowest to highest. These features work together, so someone can search for a particular resort, limit the results to trips within a budget, and sort the remaining matches.</p>
+      <h3>Algorithms and data structures</h3>
+      <p>The Angular component stores trips in a TypeScript array of <code>Trip</code> objects. I used the array <code>filter()</code> method to check the search text and price condition for each trip, then used <code>sort()</code> to order the matching results. For alphabetical sorting, I used <code>localeCompare()</code>; for prices, I compared the numeric values of the trip prices. The search also converts text to lowercase and trims the user's input so small differences in capitalization and spacing do not prevent a match.</p>
+      <p>Working with these operations helped me understand how data structures and algorithms affect the user experience. Filtering checks the records in the array, and sorting compares the remaining records to organize them. With a small dataset, processing this information in Angular is practical. For a much larger dataset, moving some of this work to the API or database could improve performance.</p>
+      <h3>Testing, challenges, and reflection</h3>
+      <p>One challenge came when the trip listing did not show any records. I checked the API and MongoDB and discovered that the trips collection was empty. I used MongoDB Compass to import the original trip data, then retested the page. After that, I confirmed that searching by a trip name, setting a maximum price, and changing the sort order produced the expected results.</p>
+      <p>I originally considered pagination, but I deferred it so I could concentrate on testing the search, filter, and sorting features. Since the application currently has only a few trip records, pagination was not necessary for this stage. The experience showed me how important it is to check the entire application—from the Angular interface to the database—when something does not work as expected.</p>
       <p><a href="https://github.com/AndresJC96/cs465-fullstack/tree/module7">View enhanced Travlr Getaways code on GitHub</a></p>
     </section>
 
