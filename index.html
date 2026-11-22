@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,48 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>CS-499 ePortfolio | Andres Cepeda</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #f4f6f9;
-      color: #263238;
-      line-height: 1.6;
-    }
-    header {
-      background: #17324d;
-      color: white;
-      padding: 45px 20px;
-      text-align: center;
-    }
-    nav {
-      background: #244865;
-      padding: 12px;
-      text-align: center;
-    }
-    nav a {
-      color: white;
-      margin: 0 12px;
-      text-decoration: none;
-    }
-    main {
-      max-width: 900px;
-      margin: 30px auto;
-      padding: 0 20px;
-    }
-    section {
-      background: white;
-      padding: 25px;
-      margin-bottom: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px #00000012;
-    }
+    body { font-family: Arial, sans-serif; margin: 0; background: #f4f6f9; color: #263238; line-height: 1.6; }
+    header { background: #17324d; color: white; padding: 45px 20px; text-align: center; }
+    nav { background: #244865; padding: 12px; text-align: center; }
+    nav a { color: white; margin: 0 12px; text-decoration: none; }
+    main { max-width: 900px; margin: 30px auto; padding: 0 20px; }
+    section { background: white; padding: 25px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 8px #00000012; }
     h2 { color: #17324d; }
     a { color: #1765a0; }
-    footer {
-      text-align: center;
-      padding: 20px;
-      color: #667;
-    }
+    .status { font-weight: bold; color: #315b73; }
+    footer { text-align: center; padding: 20px; color: #667; }
+    @media (max-width: 600px) { nav a { display: inline-block; margin: 5px 8px; } section { padding: 20px; } }
   </style>
 </head>
 <body>
@@ -66,68 +34,40 @@
   <main>
     <section id="about">
       <h2>About Me</h2>
-      <p>
-        Welcome to my CS-499 Computer Science Capstone ePortfolio.
-        This website showcases my work, technical skills, and
-        improvements to projects completed during my degree.
-      </p>
-      <p>
-        My main artifact is Travlr Getaways, a full-stack application
-        originally developed in CS-465. I am enhancing this project
-        in three areas: software engineering, algorithms and data
-        structures, and databases.
-      </p>
+      <p>Welcome to my CS-499 Computer Science Capstone ePortfolio. This website showcases my work, technical skills, and improvements to projects completed during my degree.</p>
+      <p>My main artifact is Travlr Getaways, a full-stack application originally developed in CS-465. I am using the same project to demonstrate my progress in software design and engineering, algorithms and data structures, and databases.</p>
     </section>
 
-<section id="engineering">
-  <h2>Software Design and Engineering</h2>
-  <p>
-    My first enhancement focuses on improving the security
-    of Travlr Getaways. I added JWT authentication, created
-    an Angular login page, and protected administrative
-    routes so users must be authenticated before accessing
-    certain features. I also updated the back end to require
-    authentication when adding, editing, or deleting trips.
-  </p>
-  <p>
-    This enhancement helped me better understand how front-end
-    and back-end security work together. I also gained experience
-    troubleshooting an existing application and using GitHub
-    to manage my changes. The administrator login has been
-    tested successfully, and I plan to make any additional
-    improvements based on my instructor's feedback.
-  </p>
-</section>
+    <section id="engineering">
+      <h2>Enhancement One: Software Design and Engineering</h2>
+      <p class="status">Enhancement implemented; final review and portfolio documentation ongoing.</p>
+      <p>My first enhancement focuses on improving the security of Travlr Getaways. I added JWT authentication, created an Angular login page, and protected administrative routes so users must be authenticated before accessing certain features. I also updated the back end to require authentication when adding, editing, or deleting trips.</p>
+      <p>This enhancement helped me better understand how front-end and back-end security work together. I also gained experience troubleshooting an existing application and using GitHub to manage my changes. The administrator login has been tested successfully, and I plan to make any additional improvements based on my instructor's feedback.</p>
+    </section>
 
     <section id="algorithms">
-      <h2>Algorithms and Data Structures</h2>
-      <p>
-        Planned enhancement: improve trip searching, sorting,
-        and filtering to make trip data easier to manage.
-      </p>
+      <h2>Enhancement Two: Algorithms and Data Structures</h2>
+      <p class="status">Enhancement implemented and tested; instructor review and final polishing pending.</p>
+      <p>For my second enhancement, I improved the trip listing page by adding searching, filtering, and sorting. Users can search for trips by name or resort, filter the results by a maximum price, and organize trips alphabetically or by price from lowest to highest.</p>
+      <p>I used TypeScript arrays and the <code>filter()</code> and <code>sort()</code> methods to process trip records. The search checks trip names and resorts without being case-sensitive. The price filter compares each trip's price against the amount entered, and the sorting step organizes the remaining results. These changes make it easier to find specific trips without having to look through every listing.</p>
+      <p>While testing this enhancement, I discovered that the MongoDB trips collection was empty, which prevented the application from displaying any trips. I imported the trip data using MongoDB Compass, tested the API again, and confirmed that the search, filtering, and sorting features worked with the restored records. The experience taught me to troubleshoot the front end, back end, and database together.</p>
+      <p>I originally considered pagination but deferred it so I could focus on making the three main features work correctly. Since the project currently uses a small number of trips, processing the results in Angular is reasonable. If the number of records grows, server-side searching, sorting, and pagination could be worthwhile improvements.</p>
+      <p><a href="https://github.com/AndresJC96/cs465-fullstack/tree/module7">View enhanced Travlr Getaways code on GitHub</a></p>
     </section>
 
     <section id="databases">
-      <h2>Databases</h2>
-      <p>
-        Planned enhancement: improve the MongoDB trip schema
-        and add stronger data validation.
-      </p>
+      <h2>Enhancement Three: Databases</h2>
+      <p class="status">Planned enhancement — not yet complete.</p>
+      <p>My next enhancement will focus on improving the MongoDB trip schema and adding stronger data validation. I will update this section after the database work has been implemented, tested, and reviewed.</p>
     </section>
 
     <section>
       <h2>Project Repository</h2>
-      <p>
-        <a href="https://github.com/AndresJC96/cs465-fullstack/tree/module7">
-          View Travlr Getaways enhancements on GitHub
-        </a>
-      </p>
+      <p><a href="https://github.com/AndresJC96/cs465-fullstack/tree/module7">View Travlr Getaways enhancements on GitHub</a></p>
+      <p>Enhancement narratives and final artifact documentation will be added as the remaining milestone work and instructor feedback are completed.</p>
     </section>
   </main>
 
-  <footer>
-    <p>CS-499 Computer Science Capstone | Andres Cepeda</p>
-  </footer>
+  <footer><p>CS-499 Computer Science Capstone | Andres Cepeda</p></footer>
 </body>
 </html>
-
